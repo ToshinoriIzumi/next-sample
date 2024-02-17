@@ -6,6 +6,7 @@ RUN apt-get update && \
     groupadd -g 1100 app_user && \
     useradd -m -s /bin/bash -u 1100 -g 1100 app_user
 
+COPY ./src /opt/app
 RUN mkdir -p /opt/app && chown -R app_user:app_user /opt/app
 WORKDIR /opt/app
 
